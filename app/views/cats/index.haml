@@ -1,0 +1,9 @@
+%h1 List of Cats
+= link_to 'New Cat', new_cat_path
+%hr
+- @cats.each do |cat|
+  %p= link_to cat.name, cat_path(cat)
+  %p
+    = link_to 'edit', edit_cat_path(cat)
+    = link_to 'delete', cat_path(cat), method: :delete
+  %hr
